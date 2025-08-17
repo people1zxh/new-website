@@ -1,95 +1,161 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8">
-  <title>Aviação - História, Fabricantes e Pilotos</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f2f2f2; }
-    nav { position:fixed; top:0; left:0; right:0; background:#003366; padding:15px; text-align:center; z-index:1000; }
-    nav a { color:white; margin:0 15px; text-decoration:none; font-weight:bold; }
-    nav a:hover { text-decoration:underline; }
-    .container { max-width:1000px; margin:100px auto 50px auto; padding:20px; }
-    .card { background:white; padding:20px; margin:20px 0; border-radius:12px; box-shadow:0 4px 8px rgba(0,0,0,0.1); }
-    .card img { max-width:100%; border-radius:8px; margin-top:10px; }
-    .flex { display:flex; gap:20px; flex-wrap:wrap; }
-    .flex div { flex:1; min-width:280px; text-align:center; }
-    h2 { color:#003366; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>História e Panorama da Aviação</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f9;
+        }
+        header {
+            background: #003366;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #0055a5;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        nav li {
+            margin: 0 15px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        section {
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 900px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #003366;
+        }
+        img {
+            display: block;
+            margin: 10px auto;
+            border-radius: 8px;
+            max-width: 100%;
+        }
+        footer {
+            background: #003366;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <h1>História e Panorama da Aviação</h1>
+        <p>Explorando a evolução, protagonistas e o futuro da aviação mundial</p>
+    </header>
 
-  <!-- MENU -->
-  <nav>
-    <a href="#historia">História</a>
-    <a href="#personalidades">Personalidades</a>
-    <a href="#fabricantes">Fabricantes</a>
-    <a href="#pilotos">Pilotos</a>
-    <a href="#formacao">Formação</a>
-  </nav>
+    <nav>
+        <ul>
+            <li><a href="#historia">História</a></li>
+            <li><a href="#personalidades">Personalidades</a></li>
+            <li><a href="#empresas">Empresas</a></li>
+            <li><a href="#fabricantes">Fabricantes</a></li>
+            <li><a href="#formacao-pilotos">Formação de Pilotos</a></li>
+            <li><a href="#avioes-comerciais">Aviões Comerciais</a></li>
+        </ul>
+    </nav>
 
-  <div class="container">
+    <section id="historia">
+        <h2>História da Aviação</h2>
+        <p>A aviação teve início oficial em 1903 com os Irmãos Wright, que realizaram o primeiro voo motorizado controlado. Desde então, a aviação evoluiu de simples planadores para aviões comerciais modernos, ligando o mundo de forma rápida e eficiente.</p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a3/Wrightflyer.jpg" alt="Wright Flyer" width="600">
+    </section>
 
-    <!-- HISTÓRIA -->
-    <div class="card" id="historia">
-      <h2>História da Aviação</h2>
-      <p>A aviação moderna teve início no início do século XX, quando os irmãos Wright realizaram o primeiro voo controlado em 1903. Desde então, a aviação evoluiu de pequenos protótipos para aeronaves comerciais e militares altamente sofisticadas.</p>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Wrightflyer.jpg" alt="Wright Flyer">
-    </div>
+    <section id="personalidades">
+        <h2>Personalidades Importantes</h2>
+        <ul>
+            <li><b>Orville e Wilbur Wright</b> – pioneiros do primeiro voo controlado.</li>
+            <li><b>Charles Lindbergh</b> – primeiro voo solo transatlântico em 1927.</li>
+            <li><b>Amelia Earhart</b> – pioneira feminina da aviação.</li>
+        </ul>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Amelia_Earhart_standing_under_nose_of_her_Lockheed_Model_10-E_Electra%2C_small.jpg" alt="Amelia Earhart" width="500">
+    </section>
 
-    <!-- PERSONALIDADES -->
-    <div class="card" id="personalidades">
-      <h2>Personalidades Importantes</h2>
-      <ul>
-        <li><b>Orville e Wilbur Wright</b> – pioneiros da aviação com o primeiro voo controlado.</li>
-        <li><b>Amelia Earhart</b> – primeira mulher a atravessar o Atlântico em voo solo.</li>
-        <li><b>Charles Lindbergh</b> – primeiro a atravessar o Atlântico sem escalas (1927).</li>
-      </ul>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/3/31/Amelia_Earhart_standing_under_nose_of_her_Lockheed_Model_10-E_Electra%2C_small.jpg" alt="Amelia Earhart">
-    </div>
+    <section id="empresas">
+        <h2>Empresas Aéreas pelo Mundo</h2>
+        <p>Entre as maiores companhias aéreas estão:</p>
+        <ul>
+            <li><b>American Airlines</b> (EUA)</li>
+            <li><b>Emirates</b> (Emirados Árabes Unidos)</li>
+            <li><b>Lufthansa</b> (Alemanha)</li>
+            <li><b>TAP Air Portugal</b> (Portugal)</li>
+        </ul>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Emirates_Airbus_A380_A6-EDA.jpg" alt="A380 Emirates" width="600">
+    </section>
 
-    <!-- FABRICANTES -->
-    <div class="card" id="fabricantes">
-      <h2>Fabricantes de Aeronaves</h2>
-      <div class="flex">
-        <div>
-          <h3>Airbus</h3>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Airbus_A380_blue_sky.jpg" alt="Airbus A380">
-          <p>Fabricante europeu, sede em Toulouse, França. Modelos famosos: A320, A330, A350, A380.</p>
-        </div>
-        <div>
-          <h3>Boeing</h3>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Boeing_747-8_first_flight_Everett.jpg" alt="Boeing 747-8">
-          <p>Fabricante norte-americano. Modelos famosos: 737, 747, 777, 787 Dreamliner.</p>
-        </div>
-        <div>
-          <h3>Embraer</h3>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/Embraer_190.jpg" alt="Embraer 190">
-          <p>Fabricante brasileiro especializado em jatos regionais como a família E-Jets.</p>
-        </div>
-      </div>
-    </div>
+    <section id="fabricantes">
+        <h2>Fabricantes Mais Famosos</h2>
+        <ul>
+            <li><b>Airbus</b> – família A320, A330, A350 e o gigante A380.</li>
+            <li><b>Boeing</b> – 737, 747, 777 e 787 Dreamliner.</li>
+            <li><b>Embraer</b> – destaque em jatos regionais.</li>
+            <li><b>Bombardier</b> – fabricante canadiano de aeronaves regionais e executivas.</li>
+        </ul>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Boeing_747-8_first_flight_Everett.jpg" alt="Boeing 747-8" width="600">
+    </section>
 
-    <!-- PILOTOS -->
-    <div class="card" id="pilotos">
-      <h2>Panorama Global dos Pilotos</h2>
-      <p>Atualmente, existem mais de 300.000 pilotos comerciais certificados no mundo. A indústria enfrenta uma crescente procura, com projeções da Boeing e Airbus a estimarem a necessidade de mais de 600.000 novos pilotos até 2040, devido à expansão do tráfego aéreo e aposentação de profissionais.</p>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/2/25/Airline_pilots_in_cockpit.jpg" alt="Pilotos no cockpit">
-    </div>
+    <section id="formacao-pilotos">
+        <h2>Formação de Pilotos</h2>
+        <p>A formação de pilotos é um processo exigente que requer certificações e treino intensivo. Geralmente, existem dois caminhos principais: a formação modular e a formação integrada.</p>
+        <p>No <b>curso integrado ATPL</b>, o aluno realiza todo o percurso de forma contínua (aprox. 18 a 36 meses). Já o <b>curso modular</b> permite que a formação seja feita etapa por etapa, ajustando ao ritmo e orçamento do aluno.</p>
+        <p>Inclui:</p>
+        <ul>
+            <li>Aulas teóricas (navegação, meteorologia, regulamentos).</li>
+            <li>Treino em simuladores de voo.</li>
+            <li>Horas de voo em aeronaves reais.</li>
+            <li>Exames médicos e provas práticas com autoridades da aviação civil.</li>
+        </ul>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Airbus_A320_simulator_cockpit.jpg" alt="Simulador de voo Airbus A320" width="600">
+    </section>
 
-    <!-- FORMAÇÃO -->
-    <div class="card" id="formacao">
-      <h2>Formação de um Piloto</h2>
-      <p>A formação de um piloto pode seguir vários caminhos, mas o mais comum é através de uma escola de aviação certificada. O processo inclui:</p>
-      <ul>
-        <li><b>Licença PPL</b> (Private Pilot License) – voo recreativo e de treino.</li>
-        <li><b>Licença CPL</b> (Commercial Pilot License) – permite exercer profissionalmente.</li>
-        <li><b>Licença ATPL</b> (Airline Transport Pilot License) – nível mais alto, necessário para comandar aeronaves comerciais.</li>
-      </ul>
-      <p>Além das licenças, os pilotos passam por <b>treinos práticos em simuladores</b>, <b>provas médicas rigorosas</b> e <b>formação teórica intensiva</b> (meteorologia, navegação, regulamentos aéreos, performance de voo).</p>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Airbus_A380_full_flight_simulator.jpg" alt="Simulador de voo Airbus A380">
-    </div>
+    <section id="avioes-comerciais">
+        <h2>Aviões Comerciais</h2>
+        <article>
+            <h3>Airbus A320</h3>
+            <p>O Airbus A320 é um dos aviões comerciais mais bem-sucedidos da história. Lançado em 1988, foi o primeiro avião de grande porte com controlo totalmente fly-by-wire, revolucionando a indústria. 
+            A sua popularidade deve-se à eficiência, segurança e flexibilidade operacional, sendo amplamente utilizado em voos de curta e média distância.</p>
+            <p>Especificações principais:</p>
+            <ul>
+                <li>Capacidade: 140–240 passageiros</li>
+                <li>Autonomia: até 6.300 km</li>
+                <li>Velocidade de cruzeiro: Mach 0.78 (~828 km/h)</li>
+                <li>Fabricante: Airbus (Europa)</li>
+            </ul>
+            <p>Atualmente, mais de 10.000 unidades da família A320 foram produzidas, e é considerado o rival direto do Boeing 737.</p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/06/Airbus_A320-214%2C_Airbus_Industrie_AN2245222.jpg" alt="Airbus A320 em voo" width="600">
+        </article>
+    </section>
 
-  </div>
+    <footer>
+        <p>© 2025 Aviação Global – Criado para fins educativos</p>
+    </footer>
 </body>
 </html>
-
