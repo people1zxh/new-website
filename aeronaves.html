@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aeronaves & Tecnologia - AviationHub</title>
+  <meta name="description" content="Explore fabricantes e categorias de aeronaves: Airbus, Boeing, Embraer, Cessna e muito mais.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+      min-height: 100vh;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+    header {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      position: sticky; top: 0; z-index: 1000;
+    }
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; position: relative; }
+    .logo { font-size: 2rem; font-weight: bold; color: #1e3c72; text-decoration: none; }
+    .nav-links { display: flex; list-style: none; gap: 2rem; }
+    .nav-links a { text-decoration: none; color: #333; font-weight: 500; transition: color 0.3s; }
+    .nav-links a:hover, .nav-links a.active { color: #1e3c72; font-weight: 600; }
+
+    /* Mobile menu */
+    .mobile-menu { display: none; flex-direction: column; cursor: pointer; }
+    .mobile-menu span {
+      width: 25px; height: 3px; background: #333;
+      margin: 3px 0; transition: 0.3s;
+    }
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none; flex-direction: column;
+        background: rgba(255,255,255,0.95);
+        position: absolute; top: 60px; right: 20px;
+        padding: 1rem 2rem; border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      }
+      .nav-links.show { display: flex; }
+      .mobile-menu { display: flex; }
+    }
+
+    .breadcrumb { background: rgba(255,255,255,0.1); padding: 0.5rem 0; color: white; }
+    .breadcrumb a { color: rgba(255,255,255,0.8); text-decoration: none; }
+    .breadcrumb a:hover { color: white; }
+
+    .page-hero { text-align: center; padding: 3rem 0; color: white; }
+    .page-hero h1 { font-size: 3rem; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+    .page-hero p { font-size: 1.2rem; opacity: 0.9; }
+
+    .main-content {
+      background: white; margin: 2rem 0; border-radius: 20px 20px 0 0;
+      box-shadow: 0 -10px 40px rgba(0,0,0,0.1); padding: 3rem;
+    }
+
+    .aircraft-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .aircraft-card {
+      background: #f8f9fa; border-radius: 15px; overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1); transition: all 0.3s ease;
+      cursor: pointer; display: flex; flex-direction: column;
+      text-decoration: none; color: inherit;
+      opacity: 0; transform: translateY(30px);
+      animation: fadeUp 0.8s ease forwards;
+    }
+    .aircraft-card:nth-child(1) { animation-delay: 0.1s; }
+    .aircraft-card:nth-child(2) { animation-delay: 0.3s; }
+    .aircraft-card:nth-child(3) { animation-delay: 0.5s; }
+    .aircraft-card:nth-child(4) { animation-delay: 0.7s; }
+    .aircraft-card:nth-child(5) { animation-delay: 0.9s; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .aircraft-card:hover { transform: translateY(-6px); box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
+    .aircraft-img { width: 100%; height: 180px; overflow: hidden; }
+    .aircraft-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .aircraft-info { padding: 1.5rem; flex-grow: 1; }
+    .aircraft-info h3 { color: #1e3c72; margin-bottom: 0.5rem; }
+    .aircraft-info p { color: #555; font-size: 0.95rem; }
+
+    .specs-mini { display: flex; gap: 1rem; margin-top: 1rem; }
+    .spec-box {
+      background: white; border: 2px solid #1e3c72; border-radius: 10px;
+      padding: 0.5rem 1rem; text-align: center; flex: 1;
+    }
+    .spec-value { font-weight: bold; color: #1e3c72; }
+    .spec-label { font-size: 0.8rem; color: #444; }
+
+    .page-navigation {
+      display: flex; justify-content: space-between; padding: 2rem 0; margin-top: 2rem;
+    }
+    .page-navigation a {
+      background: linear-gradient(135deg, #1e3c72, #2a5298); color: white;
+      padding: 1rem 2rem; border-radius: 25px; text-decoration: none;
+      font-weight: 500; transition: 0.3s;
+    }
+    .page-navigation a:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(30,60,114,0.3); }
+
+    .footer { background: #1a1a1a; color: white; text-align: center; padding: 2rem 0; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a href="index.html" class="logo">✈️ AviationHub</a>
+        <ul class="nav-links">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="historia.html">História</a></li>
+          <li><a href="aeronaves.html" class="active">Aeronaves</a></li>
+          <li><a href="militar.html">Militar</a></li>
+          <li><a href="economia.html">Economia</a></li>
+          <li><a href="formacao.html">Formação</a></li>
+          <li><a href="jornada.html">Minha Jornada</a></li>
+        </ul>
+        <div class="mobile-menu">
+          <span></span><span></span><span></span>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb">
+    <div class="container">
+      <a href="index.html">Início</a> > <span>Aeronaves</span>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1>Aeronaves & Tecnologia</h1>
+      <p>Explore fabricantes e categorias de aeronaves civis – dos gigantes Airbus e Boeing aos leves de treino</p>
+    </div>
+  </section>
+
+  <main class="main-content">
+    <div class="container">
+      <div class="aircraft-grid">
+        
+        <a href="airbus.html" class="aircraft-card">
+          <div class="aircraft-img"><img src="airbus.jpg" alt="Airbus"></div>
+          <div class="aircraft-info">
+            <h3>Airbus</h3>
+            <p>Do A320 ao gigante A380, a Airbus redefiniu as viagens comerciais globais.</p>
+            <div class="specs-mini">
+              <div class="spec-box"><span class="spec-value">>10k</span><div class="spec-label">Unidades vendidas</div></div>
+              <div class="spec-box"><span class="spec-value">A380</span><div class="spec-label">Maior modelo</div></div>
+            </div>
+          </div>
+        </a>
+
+        <a href="boeing.html" class="aircraft-card">
+          <div class="aircraft-img"><img src="boeing.jpg" alt="Boeing"></div>
+          <div class="aircraft-info">
+            <h3>Boeing</h3>
+            <p>Pioneira com o lendário 747 e os eficientes 737 e 787 Dreamliner.</p>
+            <div class="specs-mini">
+              <div class="spec-box"><span class="spec-value">1916</span><div class="spec-label">Fundação</div></div>
+              <div class="spec-box"><span class="spec-value">747</span><div class="spec-label">Ícone</div></div>
+            </div>
+          </div>
+        </a>
+
+        <a href="embraer.html" class="aircraft-card">
+          <div class="aircraft-img"><img src="embraer.jpg" alt="Embraer"></div>
+          <div class="aircraft-info">
+            <h3>Embraer</h3>
+            <p>Fabricante brasileira, referência em jatos regionais eficientes e modernos.</p>
+            <div class="specs-mini">
+              <div class="spec-box"><span class="spec-value">E2</span><div class="spec-label">Série destaque</div></div>
+              <div class="spec-box"><span class="spec-value">150</span><div class="spec-label">Lugares máx</div></div>
+            </div>
+          </div>
+        </a>
+
+        <a href="cessna.html" class="aircraft-card">
+          <div class="aircraft-img"><img src="cessna.jpg" alt="Cessna"></div>
+          <div class="aircraft-info">
+            <h3>Cessna</h3>
+            <p>Sinónimo de aviação geral e instrução, com modelos como o icónico 172.</p>
+            <div class="specs-mini">
+              <div class="spec-box"><span class="spec-value">>44k</span><div class="spec-label">Cessna 172</div></div>
+              <div class="spec-box"><span class="spec-value">4</span><div class="spec-label">Lugares típicos</div></div>
+            </div>
+          </div>
+        </a>
+
+        <a href="treino.html" class="aircraft-card">
+          <div class="aircraft-img"><img src="treino.jpg" alt="Aeronaves de Treino"></div>
+          <div class="aircraft-info">
+            <h3>Aeronaves de Treino</h3>
+            <p>Modelos leves e de instrução usados em escolas de voo em todo o mundo.</p>
+            <div class="specs-mini">
+              <div class="spec-box"><span class="spec-value">200 km/h</span><div class="spec-label">Vel. típica</div></div>
+              <div class="spec-box"><span class="spec-value">2-4</span><div class="spec-label">Lugares</div></div>
+            </div>
+          </div>
+        </a>
+
+      </div>
+
+      <nav class="page-navigation">
+        <a href="historia.html">← História</a>
+        <a href="militar.html">Aviação Militar →</a>
+      </nav>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 AviationHub. Feito com paixão pela aviação ✈️</p>
+      <p><a href="index.html">Voltar ao Início</a></p>
+    </div>
+  </footer>
+
+  <script>
+    // Menu mobile funcional
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const navLinks = document.querySelector('.nav-links');
+    mobileMenu.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+  </script>
+</body>
+</html>
