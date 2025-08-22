@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AviationHub - Portal da Aviação</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); min-height: 100vh; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        header { background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            position: sticky; top: 0; z-index: 1000; }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; position: relative; }
+        .logo { font-size: 2rem; font-weight: bold; color: #1e3c72; text-decoration: none; }
+        .nav-links { display: flex; list-style: none; gap: 2rem; }
+        .nav-links a { text-decoration: none; color: #333; font-weight: 500; transition: color 0.3s ease; position: relative; }
+        .nav-links a:hover { color: #1e3c72; }
+        .nav-links a::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -5px; left: 0; background-color: #1e3c72;
+            transition: width 0.3s ease; }
+        .nav-links a:hover::after { width: 100%; }
+        .hero { text-align: center; padding: 4rem 0; color: white; }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        .hero p { font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.9; }
+        .main-content { background: white; margin: 2rem 0; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); overflow: hidden; }
+        .sections-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+        .section-card { padding: 2rem; border-right: 1px solid #eee; border-bottom: 1px solid #eee;
+            transition: all 0.3s ease; cursor: pointer; position: relative; overflow: hidden; }
+        .section-card:hover { background: #f8f9fa; transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .section-card::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 3px;
+            background: linear-gradient(90deg, #1e3c72, #2a5298); transition: left 0.3s ease; }
+        .section-card:hover::before { left: 0; }
+        .section-card h3 { color: #1e3c72; margin-bottom: 1rem; font-size: 1.4rem; }
+        .section-card p { color: #666; line-height: 1.7; }
+        .icon { font-size: 2.5rem; margin-bottom: 1rem; display: block; }
+        .journey-section { background: linear-gradient(135deg,#667eea 0%,#764ba2 100%); color: white; padding: 3rem 0; margin-top: 2rem; text-align: center; }
+        .journey-section h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .journey-section p { font-size: 1.1rem; opacity: 0.9; max-width: 800px; margin: 0 auto; }
+        .footer { background: #1a1a1a; color: white; text-align: center; padding: 2rem 0; margin-top: 2rem; }
+        .mobile-menu { display: none; flex-direction: column; cursor: pointer; }
+        .mobile-menu span { width: 25px; height: 3px; background: #333; margin: 3px 0; transition: 0.3s; }
+        @media (max-width: 768px) {
+            .nav-links { display: none; flex-direction: column; background: rgba(255,255,255,0.95); position: absolute;
+                top: 60px; right: 20px; padding: 1rem 2rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+            .nav-links.show { display: flex; }
+            .mobile-menu { display: flex; }
+            .hero h1 { font-size: 2.5rem; }
+            .hero p { font-size: 1.1rem; }
+            .sections-grid { grid-template-columns: 1fr; }
+            .section-card { border-right: none; }
+        }
+        .coming-soon { background: #f8f9fa; padding: 1.5rem; border-radius: 15px; margin-top: 2rem;
+            border-left: 4px solid #ffd700; text-align: left; max-width: 800px; margin-left: auto; margin-right: auto; border: 1px solid #e9ecef; }
+        .coming-soon h4 { color: #d63384; margin-bottom: 0.5rem; font-size: 1.2rem; }
+        .coming-soon p { color: #495057; font-size: 1rem; }
+    </style>
+</head>
+<body>
+<header>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="logo">✈️ AviationHub</a>
+            <ul class="nav-links">
+                <li><a href="historia.html">História</a></li>
+                <li><a href="aeronaves.html">Aeronaves</a></li>
+                <li><a href="militar.html">Aviação Militar</a></li>
+                <li><a href="economia.html">Economia</a></li>
+                <li><a href="formacao.html">Formação</a></li>
+                <li><a href="jornada.html">Minha Jornada</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+            <div class="mobile-menu"><span></span><span></span><span></span></div>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container">
+        <h1>Portal da Aviação</h1>
+        <p>Explore o fascinante mundo da aviação - da história aos céus do futuro</p>
+    </div>
+</section>
+
+<div class="container">
+    <div class="main-content">
+        <div class="sections-grid">
+            <div class="section-card" onclick="navigateToSection('historia')">
+                <span class="icon">🛩️</span>
+                <h3>História da Aviação</h3>
+                <p>Desde os irmãos Wright até à era moderna. Descubra os marcos que revolucionaram o transporte aéreo.</p>
+            </div>
+            <div class="section-card" onclick="navigateToSection('aeronaves')">
+                <span class="icon">✈️</span>
+                <h3>Aeronaves & Tecnologia</h3>
+                <p>Especificações técnicas, modelos icónicos e inovações tecnológicas.</p>
+            </div>
+            <div class="section-card" onclick="navigateToSection('militar')">
+                <span class="icon">🚁</span>
+                <h3>Aviação Militar</h3>
+                <p>Caças, bombardeiros, helicópteros militares e o papel estratégico da aviação.</p>
+            </div>
+            <div class="section-card" onclick="navigateToSection('economia')">
+                <span class="icon">🌍</span>
+                <h3>Economia & Geopolítica</h3>
+                <p>Como a aviação moldou a geopolítica mundial, rotas comerciais e turismo.</p>
+            </div>
+            <div class="section-card" onclick="navigateToSection('formacao')">
+                <span class="icon">🎓</span>
+                <h3>Formação & Carreiras</h3>
+                <p>Guias sobre licenças de piloto, escolas de voo e carreiras na aviação.</p>
+            </div>
+            <div class="section-card" onclick="navigateToSection('jornada')">
+                <span class="icon">🛫</span>
+                <h3>Minha Jornada</h3>
+                <p>Experiências, desafios e conquistas durante o curso ATPL integrado.</p>
+            </div>
+            <div class="section-card" onclick="navigateToSection('contato')">
+                <span class="icon">📩</span>
+                <h3>Contato</h3>
+                <p>Entre em contacto para sugestões, partilhas ou colaborações.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="journey-section">
+    <div class="container">
+        <h2>A Minha Jornada ATPL</h2>
+        <p>Acompanhe a minha formação como piloto comercial. Vou partilhar experiências, planos de voo e desafios.</p>
+        <div class="coming-soon">
+            <h4>Em breve:</h4>
+            <p>📚 Apontamentos das aulas | 🛩️ Relatórios de voos | 📸 Fotos da formação</p>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2024 AviationHub. Feito com paixão pela aviação ✈️</p>
+    </div>
+</footer>
+
+<script>
+function navigateToSection(section) {
+    const pages = {
+        'historia': 'historia.html',
+        'aeronaves': 'aeronaves.html',
+        'militar': 'militar.html',
+        'economia': 'economia.html',
+        'formacao': 'formacao.html',
+        'jornada': 'jornada.html',
+        'contato': 'contato.html'
+    };
+    if (pages[section]) { window.location.href = pages[section]; }
+}
+const mobileMenu = document.querySelector('.mobile-menu');
+const navLinks = document.querySelector('.nav-links');
+mobileMenu.addEventListener('click', () => { navLinks.classList.toggle('show'); });
+</script>
+</body>
+</html>

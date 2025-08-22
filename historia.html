@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>História da Aviação - AviationHub</title>
+    <meta name="description" content="A fascinante história da aviação: dos primeiros voos aos jatos modernos. Descubra os marcos que revolucionaram o transporte aéreo.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #1e3c72;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #1e3c72;
+        }
+
+        .nav-links a.active {
+            color: #1e3c72;
+            font-weight: 600;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 0;
+            color: white;
+        }
+
+        .breadcrumb a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            color: white;
+        }
+
+        /* Hero Section */
+        .page-hero {
+            text-align: center;
+            padding: 3rem 0;
+            color: white;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        }
+
+        .page-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .page-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Main Content */
+        .main-content {
+            background: white;
+            margin: 2rem 0;
+            border-radius: 20px 20px 0 0;
+            box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.1);
+            min-height: 80vh;
+        }
+
+        .content-main {
+            padding: 3rem;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 1rem;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, #1e3c72, #2a5298);
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.5rem;
+            top: 1.5rem;
+            width: 15px;
+            height: 15px;
+            background: #1e3c72;
+            border: 3px solid white;
+            border-radius: 50%;
+            box-shadow: 0 0 0 3px #1e3c72;
+        }
+
+        .timeline-year {
+            display: inline-block;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-item h3 {
+            color: #1e3c72;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .timeline-item p {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .curiosity-box {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1rem 0;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #34495e;
+        }
+
+        .curiosity-box::before {
+            content: '💡';
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 2rem;
+            opacity: 0.2;
+        }
+
+        .curiosity-box h4 {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #ecf0f1;
+        }
+
+        .curiosity-box p {
+            color: #ecf0f1;
+            line-height: 1.6;
+        }
+
+        .highlight-fact {
+            background: linear-gradient(135deg, #ffd700, #ffed4e);
+            color: #333;
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            border-left: 4px solid #f39c12;
+            font-weight: 500;
+        }
+
+        .aircraft-specs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .spec-item {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid #1e3c72;
+            box-shadow: 0 2px 8px rgba(30, 60, 114, 0.1);
+        }
+
+        .spec-value {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #1e3c72;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .spec-label {
+            font-size: 0.9rem;
+            color: #444;
+            font-weight: 500;
+        }
+
+        /* Navigation */
+        .page-navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem;
+            background: #f8f9fa;
+            margin-top: 2rem;
+        }
+
+        .page-navigation a {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .page-navigation a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(30, 60, 114, 0.3);
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .footer a {
+            color: #1e3c72;
+            text-decoration: none;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+
+            .content-main {
+                padding: 1.5rem;
+            }
+
+            .timeline {
+                padding-left: 2rem;
+            }
+
+            .timeline-item::before {
+                left: -1.5rem;
+            }
+
+            .aircraft-specs {
+                grid-template-columns: 1fr;
+            }
+
+            .page-navigation {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">✈️ AviationHub</a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="historia.html" class="active">História</a></li>
+                    <li><a href="aeronaves.html">Aeronaves</a></li>
+                    <li><a href="militar.html">Militar</a></li>
+                    <li><a href="economia.html">Economia</a></li>
+                    <li><a href="formacao.html">Formação</a></li>
+                    <li><a href="jornada.html">Minha Jornada</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Início</a> > <span>História da Aviação</span>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>História da Aviação</h1>
+            <p>Desde os sonhos de Ícaro até aos jatos supersónicos - a incrível jornada da conquista dos céus</p>
+        </div>
+    </section>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="content-main">
+                <div class="timeline">
+                    
+                    <div class="timeline-item">
+                        <span class="timeline-year">1903</span>
+                        <h3>🛩️ Os Irmãos Wright - O Primeiro Voo</h3>
+                        <p>Em 17 de dezembro, Orville Wright pilotou o Wright Flyer por 12 segundos e 36 metros em Kitty Hawk, Carolina do Norte. Este voo de 12 segundos mudou o mundo para sempre.</p>
+                        
+                        <div class="aircraft-specs">
+                            <div class="spec-item">
+                                <span class="spec-value">12s</span>
+                                <span class="spec-label">Duração do voo</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-value">36m</span>
+                                <span class="spec-label">Distância percorrida</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-value">12 HP</span>
+                                <span class="spec-label">Potência do motor</span>
+                            </div>
+                        </div>
+                        
+                        <div class="curiosity-box">
+                            <h4>Curiosidade</h4>
+                            <p>O Wright Flyer custou apenas $1000 para construir. Hoje isso equivaleria a cerca de $35,000, menos que um carro luxuoso!</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="timeline-year">1909</span>
+                        <h3>🌊 Louis Blériot - Atravessando o Canal da Mancha</h3>
+                        <p>Blériot tornou-se o primeiro a atravessar o Canal da Mancha num avião, voando 37 km entre Calais e Dover em 37 minutos. Isto provou que os aviões podiam ser usados para viagens longas.</p>
+                        
+                        <div class="highlight-fact">
+                            <strong>Facto incrível:</strong> Blériot quase desistiu quando o seu motor começou a sobreaquecer, mas uma chuva inesperada arrefeceu-o o suficiente para completar a travessia!
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="timeline-year">1914-1918</span>
+                        <h3>⚔️ Primeira Guerra Mundial - Aviação de Combate</h3>
+                        <p>A guerra acelerou dramaticamente o desenvolvimento da aviação. Os aviões evoluíram de máquinas frágeis para caças sofisticados. Surgiram lendas como o "Barão Vermelho" Manfred von Richthofen.</p>
+                        
+                        <div class="aircraft-specs">
+                            <div class="spec-item">
+                                <span class="spec-value">80</span>
+                                <span class="spec-label">Vitórias do Barão Vermelho</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-value">180 km/h</span>
+                                <span class="spec-label">Velocidade máxima típica</span>
+                            </div>
+                        </div>
+                        
+                        <div class="curiosity-box">
+                            <h4>Era dos Ases</h4>
+                            <p>Os pilotos de caça eram celebridades da época. O código de honra entre pilotos era tão forte que por vezes lançavam flores sobre os túmulos de inimigos respeitados.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="timeline-year">1927</span>
+                        <h3>🌍 Charles Lindbergh - Solo Através do Atlântico</h3>
+                        <p>Lindbergh completou o primeiro voo solo sem escalas através do Atlântico, de Nova Iorque a Paris, em 33,5 horas. O "Spirit of St. Louis" tornou-se um dos aviões mais famosos da história.</p>
+                        
+                        <div class="highlight-fact">
+                            <strong>Preparação extrema:</strong> Para se manter acordado, Lindbergh levou apenas sanduíches e água. Não levou rádio nem para-quedas para poupar peso!
+                        </div>
+                        
+                        <div class="aircraft-specs">
+                            <div class="spec-item">
+                                <span class="spec-value">5,800 km</span>
+                                <span class="spec-label">Distância total</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-value">33.5h</span>
+                                <span class="spec-label">Tempo de voo</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-value">$25,000</span>
+                                <span class="spec-label">Prémio Orteig</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="timeline-year">1939-1945</span>
+                        <h3>🚀 Segunda Guerra Mundial - Era dos Jatos</h3>
+                        <p>A guerra trouxe inovações revolucionárias: radar, motores a jato, e missões de longo alcance. O conflito terminou com bombardeiros que voavam a 10.000 metros de altitude.</p>
+                        
+                        <div class="curiosity-box">
+                            <h4>Nascimento do Jet</h4>
+                            <p>O primeiro jato operacional foi o alemão Messerschmitt Me 262, que voou em 1944. Era 160 km/h mais rápido que qualquer caça aliado da época!</p>
+                        </div>
+                        
+                        <div class="aircraft-specs">
+                            <div class="spec-item">
+                                <span class="spec-value">870 km/h</span>
+                                <span class="spec-label">Me 262 velocidade máx</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-value">12.000m</span>
+                                <span class="spec-label">Teto de voo B-29</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="timeline-year">1947</span>
+                        <h3>💥 Chuck Yeager - Quebrando a Barreira do Som</h3>
+                        <p>A bordo do Bell X-1, Yeager tornou-se o primeiro humano a viajar mais rápido que o som em voo nivelado, atingindo Mach 1.07 a 13.700 metros de altitude.</p>
+                        
+                        <div class="highlight-fact">
+                            <strong>Coragem extrema:</strong> Yeager voou com duas costelas partidas (de um acidente de cavalo na noite anterior) e precisou de ajuda para fechar a cabine!
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="timeline-year">1958</span>
+                        <h3>✈️ Era Comercial - Boeing 707 e De Havilland Comet</h3>
+                        <p>A aviação comercial a jato revolucionou as viagens. O mundo ficou subitamente mais pequeno, com voos intercontinentais regulares e acessíveis ao público geral.</p>
+                        
+                        <div class="aircraft-specs">
+                            <div class="spec-item">
+                                <span class="spec-value">181</span>
+                                <span class="spec-label">Passageiros Boeing 707</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-value">900 km/h</span>
+                                <span class="spec-label">Velocidade de cruzeiro</span>
+                            </div>
+                        </div>
+                        
+                        <div class="curiosity-box">
+                            <h4>Revolução Social</h4>
+                            <p>Em 1955, voar custava o equivalente a 3 meses de salário médio. Hoje, o mesmo voo custa cerca de 2-3 dias de trabalho!</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="timeline-year">1969</span>
+                        <h3>🦅 Concorde - A Era Supersónica</h3>
+                        <p>O Concorde inaugurou os voos comerciais supersónicos, voando a Mach 2.04. Londres-Nova Iorque em apenas 3 horas e 30 minutos!</p>
+                        
+                        <div class="aircraft-specs">
+                            <div class="spec-item">
+                                <span class="spec-value">Mach 2.04</span>
+                                <span class="spec-label">Velocidade máxima</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-value">18.000m</span>
+                                <span class="spec-label">Altitude de cruzeiro</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-value">27 anos</span>
+                                <span class="spec-label">Anos de serviço</span>
+                            </div>
+                        </div>
+                        
+                        <div class="highlight-fact">
+                            <strong>Fenómeno físico:</strong> A fricção do ar fazia o Concorde alongar 20-25 cm durante o voo supersónico devido ao aquecimento!
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="timeline-year">Presente</span>
+                        <h3>🔮 Era Moderna - Tecnologia e Sustentabilidade</h3>
+                        <p>Hoje voamos em aviões com sistemas fly-by-wire, materiais compostos, e motores ultra-eficientes. O futuro aponta para aviões elétricos e combustíveis sustentáveis.</p>
+                        
+                        <div class="curiosity-box">
+                            <h4>Próxima Revolução</h4>
+                            <p>Empresas como a Eviation estão a desenvolver aviões 100% elétricos para voos regionais, prometendo voos silenciosos e sem emissões!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="page-navigation">
+                <a href="index.html" class="nav-prev">
+                    ← Voltar ao Início
+                </a>
+                <a href="aeronaves.html" class="nav-next">
+                    Aeronaves & Tecnologia →
+                </a>
+            </nav>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 AviationHub. Feito com paixão pela aviação ✈️</p>
+            <p><a href="index.html">Voltar ao Início</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling para links internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Animação de entrada para items da timeline
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Inicializar animações
+        document.querySelectorAll('.timeline-item').forEach((item, index) => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(30px)';
+            item.style.transition = `all 0.6s ease ${index * 0.1}s`;
+            observer.observe(item);
+        });
+    </script>
+</body>
+</html>

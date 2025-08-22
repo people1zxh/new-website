@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aeronaves de Treino - AviationHub</title>
+  <meta name="description" content="Aeronaves de treino: principais modelos para PPL, CPL/IR, transição para glass cockpit e acrobacia/Upset."/>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;line-height:1.6;color:#333;
+      background:linear-gradient(135deg,#1e3c72 0%,#2a5298 100%);}
+    .container{width:90%;max-width:1200px;margin:0 auto;}
+    header{background:#fff;box-shadow:0 4px 20px rgba(0,0,0,0.1);position:sticky;top:0;z-index:1000;}
+    nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 0;}
+    .logo{font-size:2rem;font-weight:bold;color:#1e3c72;text-decoration:none;}
+    .nav-links{list-style:none;display:flex;gap:1.2rem;align-items:center;}
+    .nav-links a{text-decoration:none;color:#333;font-weight:500;transition:color .3s;position:relative;}
+    .nav-links a:hover{color:#1e3c72;}
+    .nav-links a::after{content:'';position:absolute;width:0;height:2px;bottom:-5px;left:0;background-color:#1e3c72;transition:width .3s;}
+    .nav-links a:hover::after{width:100%;}
+    .nav-links a.active{color:#1e3c72;font-weight:600;}
+    .mobile-menu{display:none;flex-direction:column;gap:5px;cursor:pointer;}
+    .mobile-menu span{width:26px;height:3px;background:#333;border-radius:3px;}
+    @media(max-width:768px){
+      .nav-links{display:none;flex-direction:column;background:rgba(255,255,255,.95);
+        position:absolute;top:60px;right:20px;padding:1rem 2rem;border-radius:10px;box-shadow:0 5px 15px rgba(0,0,0,0.1);}
+      .nav-links.show{display:flex;}
+      .mobile-menu{display:flex;}
+    }
+    .breadcrumb{background:rgba(255,255,255,0.1);padding:.5rem 0;color:#fff;}
+    .breadcrumb a{color:rgba(255,255,255,0.8);text-decoration:none;}
+    .breadcrumb a:hover{color:#fff;}
+    .page-hero{text-align:center;padding:3rem 0;color:#fff;}
+    .page-hero h1{font-size:3rem;margin-bottom:1rem;text-shadow:2px 2px 4px rgba(0,0,0,0.3);}
+    .main-content{background:#fff;margin:2rem 0;border-radius:20px 20px 0 0;
+      box-shadow:0 -10px 40px rgba(0,0,0,0.1);}
+    .content-main{padding:3rem;}
+    p,li,td,th{text-align:justify;}
+    .section{margin-bottom:2.5rem;}
+    .section h2{color:#1e3c72;margin-bottom:.75rem;}
+    .muted{color:#555;}
+    figure{margin:1.5rem auto;border-radius:14px;overflow:hidden;box-shadow:0 8px 18px rgba(0,0,0,0.06);
+      max-width:700px;}
+    figure img{width:100%;height:auto;display:block;object-fit:cover;}
+    figure img.portrait{max-width:350px;margin:0 auto;}
+    figure figcaption{text-align:center;font-size:.9rem;color:#555;padding:.5rem;background:#f8f9fa;}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;}
+    .card{background:#f8f9fa;border:1px solid #e8edf5;border-radius:14px;padding:1rem;box-shadow:0 4px 12px rgba(0,0,0,0.05);}
+    .facts{display:grid;gap:.75rem;margin-top:.5rem;}
+    .fact{background:#fff;border-left:4px solid #1e3c72;padding:.75rem 1rem;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.04);}
+    .table-wrapper{overflow-x:auto;margin-top:.75rem;}
+    .table{width:100%;border-collapse:collapse;border:1px solid #e8edf5;border-radius:12px;overflow:hidden;min-width:520px;}
+    .table th,.table td{padding:.8rem 1rem;border-bottom:1px solid #eef2f8;vertical-align:top;}
+    .table thead th{background:#f5f7fb;color:#2a3a5b;text-align:justify;white-space:nowrap;}
+    .badge{display:inline-block;background:#e9f0ff;color:#1e3c72;padding:.15rem .5rem;border-radius:999px;font-size:.8rem;margin-right:.3rem;border:1px solid #cfe0ff;}
+    .reveal{opacity:0;transform:translateY(26px);transition:opacity .6s,transform .6s;}
+    .reveal.show{opacity:1;transform:translateY(0);}
+    .footer{background:#111;color:#fff;padding:2rem 0;text-align:center;}
+    .footer a{color:#fff;text-decoration:underline;}
+    @media(max-width:480px){
+      .container{padding-left:12px;padding-right:12px;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a href="index.html" class="logo">✈️ AviationHub</a>
+        <ul class="nav-links">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="historia.html">História</a></li>
+          <li><a href="aeronaves.html" class="active">Aeronaves</a></li>
+          <li><a href="militar.html">Militar</a></li>
+          <li><a href="economia.html">Economia</a></li>
+          <li><a href="formacao.html">Formação</a></li>
+          <li><a href="jornada.html">Minha Jornada</a></li>
+        </ul>
+        <div class="mobile-menu"><span></span><span></span><span></span></div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="breadcrumb">
+    <div class="container">
+      <small><a href="index.html">Início</a> › <a href="aeronaves.html">Aeronaves</a> › <strong>Treino</strong></small>
+    </div>
+  </div>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1>Aeronaves de Treino</h1>
+      <p>Do PPL ao CPL/IR. Plataformas clássicas e modernas</p>
+    </div>
+  </section>
+
+  <div class="main-content">
+    <div class="container">
+      <div class="content-main">
+
+        <section class="section reveal">
+          <h2>Visão geral</h2>
+          <p>
+            Aeronaves de treino equilibram simplicidade, custos operacionais baixos e robustez.
+            Para PPL dominam os monomotores a pistão com instrumentos básicos ou glass cockpit leve.
+            Para CPL/IR e MCC entram plataformas IFR completas, biturbos e simuladores AATD/FTD.
+          </p>
+          <figure>
+            <img src="treino-hero.jpg" alt="Linha de aeronaves de treino num aeródromo">
+            <figcaption>Plataformas de treino: do básico VFR ao IFR multimotor.</figcaption>
+          </figure>
+        </section>
+
+        <section class="section reveal">
+          <h2>PPL: clássicos que formam gerações</h2>
+          <div class="cards">
+            <div class="card">
+              <h3>Cessna 152</h3>
+              <p class="muted">Dois lugares. Estável e económico. Ideal para circuitos e navegação inicial.</p>
+              <span class="badge">PPL</span><span class="badge">VFR</span>
+            </div>
+            <div class="card">
+              <h3>Cessna 172</h3>
+              <p class="muted">Quatro lugares. O “carro de escola” global. Muitas frotas com Garmin G1000.</p>
+              <span class="badge">PPL</span><span class="badge">IFR básico</span>
+            </div>
+            <div class="card">
+              <h3>Piper PA-28</h3>
+              <p class="muted">Gama Cherokee/Archer/Warrior. Asa baixa. Boa ergonomia para treino contínuo.</p>
+              <span class="badge">PPL</span><span class="badge">Navegação</span>
+            </div>
+            <div class="card">
+              <h3>Tecnam P2002</h3>
+              <p class="muted">Leve, eficiente e moderno. Boa visibilidade e manutenção simples.</p>
+              <span class="badge">PPL</span><span class="badge">ULM/LAPL</span>
+            </div>
+          </div>
+          <figure>
+            <img src="treino-ppl.jpg" alt="Cessna e Piper usados no PPL">
+            <figcaption>Monomotores clássicos para PPL.</figcaption>
+          </figure>
+        </section>
+
+        <section class="section reveal">
+          <h2>CPL/IR: IFR sério e biturbos</h2>
+          <p>
+            Para o CPL/IR a escola exige aeronaves IFR equipadas com GNSS, NAV/COM duplos, piloto automático
+            e, muitas vezes, plataforma multimotor para procedimentos assimétricos.
+          </p>
+          <div class="table-wrapper">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Modelo</th><th>Tipo</th><th>Lugares</th><th>Aviónica típica</th><th>Destaques</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Diamond DA40</td><td>Monomotor pistão</td><td>4</td><td>Garmin G1000</td>
+                  <td>Excelente visibilidade e eficiência para IFR inicial.</td>
+                </tr>
+                <tr>
+                  <td>Diamond DA42</td><td>Bimotor diesel</td><td>4</td><td>G1000 + AP</td>
+                  <td>Consumo contido. Ótima plataforma de IR multimotor.</td>
+                </tr>
+                <tr>
+                  <td>Piper PA-44 Seminole</td><td>Bimotor pistão</td><td>4</td><td>G500/650 ou G1000</td>
+                  <td>Clássico de treino ME. Procedimentos assimétricos previsíveis.</td>
+                </tr>
+                <tr>
+                  <td>Tecnam P2006T</td><td>Bimotor leve</td><td>4</td><td>G1000 NXi</td>
+                  <td>Leve, MEP eficiente, boa razão custo/benefício para IR.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <figure>
+            <img src="treino-ifr.jpg" alt="Diamond DA42 em aproximação IFR">
+            <figcaption>IFR e procedimentos multimotor.</figcaption>
+          </figure>
+        </section>
+
+        <section class="section reveal">
+          <h2>Transição para glass cockpit</h2>
+          <p>
+            A familiaridade com G1000/G500 e autopiloto cedo reduz carga de trabalho no IFR.
+            Muitas escolas fazem ponte em DA40/172 G1000 antes de avançar para MEP ou simulador.
+          </p>
+          <figure>
+            <img src="treino-glass.jpg" alt="Painel Garmin G1000 numa aeronave de treino">
+            <figcaption>Glass cockpit: consciência situacional e gestão automatizada.</figcaption>
+          </figure>
+        </section>
+
+        <section class="section reveal">
+          <h2>Acrobacia e UPRT</h2>
+          <p>
+            O treino UPRT e acrobático melhora a gestão de ângulos elevados, estola, rotação e recuperação.
+            Plataformas típicas incluem o CAP-10, Extra 200/300 e Citabria.
+          </p>
+          <div class="cards">
+            <div class="card">
+              <h3>CAP-10</h3>
+              <p class="muted">Madeira/compósito. Excelente para figuras básicas e UPRT.</p>
+              <span class="badge">UPRT</span><span class="badge">Acrobacia</span>
+            </div>
+            <div class="card">
+              <h3>Extra 300</h3>
+              <p class="muted">Alta performance. Envelope amplo para treino avançado.</p>
+              <span class="badge">Acrobacia</span>
+            </div>
+            <div class="card">
+              <h3>Citabria</h3>
+              <p class="muted">Clássico taildragger. Sensibilização a vento e solo.</p>
+              <span class="badge">Taildragger</span>
+            </div>
+          </div>
+          <figure>
+            <img src="treino-uprt.jpg" alt="Aeronave acrobática em treino UPRT">
+            <figcaption>UPRT: prevenção e recuperação efetiva.</figcaption>
+          </figure>
+        </section>
+
+        <section class="section reveal">
+          <h2>Como escolher a plataforma</h2>
+          <ul class="muted">
+            <li><strong>Objetivo</strong>: PPL vs CPL/IR vs UPRT.</li>
+            <li><strong>Aviónica</strong>: transição cedo para glass cockpit facilita o IR.</li>
+            <li><strong>Custo por hora</strong>: consumo, manutenção, disponibilidade.</li>
+            <li><strong>Frota e manutenção</strong>: confiabilidade e peças.</li>
+            <li><strong>Clima e pista</strong>: performance e peso/altitude.</li>
+          </ul>
+        </section>
+
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 AviationHub. Feito com paixão pela aviação ✈️</p>
+      <p><a href="index.html">Voltar ao Início</a></p>
+    </div>
+  </footer>
+
+  <script>
+    const mobileMenu=document.querySelector('.mobile-menu');
+    const navLinks=document.querySelector('.nav-links');
+    mobileMenu.addEventListener('click',()=>{navLinks.classList.toggle('show');});
+    const observer=new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('show');}});
+    },{threshold:0.12});
+    document.querySelectorAll('.reveal').forEach(el=>{observer.observe(el);});
+  </script>
+</body>
+</html>
