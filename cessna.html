@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cessna - AviationHub</title>
+  <meta name="description" content="Cessna: história, evolução, modelos icónicos, ligação à formação de pilotos e impacto global."/>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;line-height:1.6;color:#333;
+      background:linear-gradient(135deg,#1e3c72 0%,#2a5298 100%);}
+    .container{width:90%;max-width:1200px;margin:0 auto;}
+    header{background:#fff;box-shadow:0 4px 20px rgba(0,0,0,0.1);position:sticky;top:0;z-index:1000;}
+    nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 0;}
+    .logo{font-size:2rem;font-weight:bold;color:#1e3c72;text-decoration:none;}
+    .nav-links{list-style:none;display:flex;gap:1.2rem;align-items:center;}
+    .nav-links a{text-decoration:none;color:#333;font-weight:500;transition:color .3s;position:relative;}
+    .nav-links a:hover{color:#1e3c72;}
+    .nav-links a::after{content:'';position:absolute;width:0;height:2px;bottom:-5px;left:0;background-color:#1e3c72;transition:width .3s;}
+    .nav-links a:hover::after{width:100%;}
+    .nav-links a.active{color:#1e3c72;font-weight:600;}
+    .mobile-menu{display:none;flex-direction:column;gap:5px;cursor:pointer;}
+    .mobile-menu span{width:26px;height:3px;background:#333;border-radius:3px;}
+    @media(max-width:768px){
+      .nav-links{display:none;flex-direction:column;background:rgba(255,255,255,.95);
+        position:absolute;top:60px;right:20px;padding:1rem 2rem;border-radius:10px;box-shadow:0 5px 15px rgba(0,0,0,0.1);}
+      .nav-links.show{display:flex;}
+      .mobile-menu{display:flex;}
+    }
+    .breadcrumb{background:rgba(255,255,255,0.1);padding:.5rem 0;color:#fff;}
+    .breadcrumb a{color:rgba(255,255,255,0.8);text-decoration:none;}
+    .breadcrumb a:hover{color:#fff;}
+    .page-hero{text-align:center;padding:3rem 0;color:#fff;}
+    .page-hero h1{font-size:3rem;margin-bottom:1rem;text-shadow:2px 2px 4px rgba(0,0,0,0.3);}
+    .main-content{background:#fff;margin:2rem 0;border-radius:20px 20px 0 0;
+      box-shadow:0 -10px 40px rgba(0,0,0,0.1);}
+    .content-main{padding:3rem;}
+    p,li,td,th{text-align:justify;}
+    .section{margin-bottom:2.5rem;}
+    .section h2{color:#1e3c72;margin-bottom:.75rem;}
+    figure{margin:1.5rem auto;border-radius:14px;overflow:hidden;box-shadow:0 8px 18px rgba(0,0,0,0.06);
+      max-width:700px;}
+    figure img{width:100%;height:auto;display:block;object-fit:cover;}
+    figure img.portrait{max-width:350px;margin:0 auto;}
+    figure figcaption{text-align:center;font-size:.9rem;color:#555;padding:.5rem;background:#f8f9fa;}
+    .facts{display:grid;gap:.75rem;margin-top:.5rem;}
+    .fact{background:#fff;border-left:4px solid #1e3c72;padding:.75rem 1rem;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.04);}
+    .table-wrapper{overflow-x:auto;margin-top:.75rem;}
+    .table{width:100%;border-collapse:collapse;border:1px solid #e8edf5;border-radius:12px;overflow:hidden;min-width:400px;}
+    .table th,.table td{padding:.8rem 1rem;border-bottom:1px solid #eef2f8;}
+    .table thead th{background:#f5f7fb;color:#2a3a5b;text-align:justify;}
+    .reveal{opacity:0;transform:translateY(26px);transition:opacity .6s,transform .6s;}
+    .reveal.show{opacity:1;transform:translateY(0);}
+    .footer{background:#111;color:#fff;padding:2rem 0;text-align:center;}
+    .footer a{color:#fff;text-decoration:underline;}
+    @media(max-width:480px){
+      .container{padding-left:12px;padding-right:12px;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a href="index.html" class="logo">✈️ AviationHub</a>
+        <ul class="nav-links">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="historia.html">História</a></li>
+          <li><a href="aeronaves.html" class="active">Aeronaves</a></li>
+          <li><a href="militar.html">Militar</a></li>
+          <li><a href="economia.html">Economia</a></li>
+          <li><a href="formacao.html">Formação</a></li>
+          <li><a href="jornada.html">Minha Jornada</a></li>
+        </ul>
+        <div class="mobile-menu"><span></span><span></span><span></span></div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="breadcrumb">
+    <div class="container">
+      <small><a href="index.html">Início</a> › <a href="aeronaves.html">Aeronaves</a> › <strong>Cessna</strong></small>
+    </div>
+  </div>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1>Cessna</h1>
+      <p>História, modelos icónicos e papel na formação de pilotos</p>
+    </div>
+  </section>
+
+  <div class="main-content">
+    <div class="container">
+      <div class="content-main">
+
+        <section class="section reveal">
+          <h2>Origem</h2>
+          <p>
+            A Cessna Aircraft Company foi fundada em 1927 por Clyde Cessna, um agricultor visionário do Kansas,
+            que se apaixonou pela aviação ao construir o seu próprio avião em madeira e tecido.
+            Rapidamente a marca tornou-se um dos nomes mais icónicos na aviação geral.
+          </p>
+          <figure>
+            <img src="cessna-founder.jpg" alt="Clyde Cessna, fundador da Cessna" class="portrait">
+            <figcaption>Clyde Cessna, fundador da Cessna.</figcaption>
+          </figure>
+        </section>
+
+        <section class="section reveal">
+          <h2>Progressão histórica</h2>
+          <p>
+            Durante o século XX, a Cessna especializou-se em aeronaves leves, acessíveis e fiáveis,
+            usadas tanto para lazer como para formação.  
+            A empresa ganhou notoriedade mundial com a produção em massa de aviões de treino.
+          </p>
+          <figure>
+            <img src="cessna-172.jpg" alt="Cessna 172 Skyhawk">
+            <figcaption>Cessna 172 Skyhawk, o avião mais produzido da história.</figcaption>
+          </figure>
+        </section>
+
+        <section class="section reveal">
+          <h2>Modelos mais usados</h2>
+          <div class="table-wrapper">
+            <table class="table">
+              <thead>
+                <tr><th>Modelo</th><th>Categoria</th><th>Destaques</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Cessna 172 Skyhawk</td><td>Treino/Utilitário</td><td>Avião mais produzido do mundo, amplamente usado em escolas de voo.</td></tr>
+                <tr><td>Cessna 152</td><td>Treino</td><td>Clássico de dois lugares, acessível e simples de operar.</td></tr>
+                <tr><td>Citation X</td><td>Executivo</td><td>Um dos jatos executivos mais rápidos já construídos.</td></tr>
+                <tr><td>Cessna Caravan</td><td>Utilitário</td><td>Monomotor turboélice, versátil em transporte de carga e passageiros.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <figure>
+            <img src="cessna-citation.jpg" alt="Cessna Citation X">
+            <figcaption>Cessna Citation X, símbolo da aviação executiva.</figcaption>
+          </figure>
+        </section>
+
+        <section class="section reveal">
+          <h2>Curiosidades e impacto</h2>
+          <div class="facts">
+            <div class="fact"><strong>Formação de pilotos</strong> — A maioria dos pilotos do mundo fez as suas primeiras horas num Cessna 152 ou 172.</div>
+            <div class="fact"><strong>Produção recorde</strong> — O Cessna 172 ultrapassou as 45.000 unidades produzidas.</div>
+            <div class="fact"><strong>Durabilidade</strong> — Muitos Cessnas fabricados há mais de 40 anos continuam a voar diariamente.</div>
+          </div>
+          <figure>
+            <img src="cessna-training.jpg" alt="Cessna 152 em escola de voo">
+            <figcaption>Cessna 152, ícone do treino inicial.</figcaption>
+          </figure>
+        </section>
+
+        <section class="section reveal">
+          <h2>Acidentes e factos trágicos</h2>
+          <p>
+            Apesar da fiabilidade, a popularidade dos Cessna faz com que estejam presentes em numerosos relatórios de acidentes.
+            Muitos destes casos estão relacionados com erros de pilotagem em treino ou condições meteorológicas adversas,
+            não com falhas de fabrico.
+          </p>
+          <figure>
+            <img src="cessna-accident.jpg" alt="Acidente envolvendo um Cessna">
+            <figcaption>Exemplo de acidente envolvendo um Cessna.</figcaption>
+          </figure>
+        </section>
+
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 AviationHub. Feito com paixão pela aviação ✈️</p>
+      <p><a href="index.html">Voltar ao Início</a></p>
+    </div>
+  </footer>
+
+  <script>
+    const mobileMenu=document.querySelector('.mobile-menu');
+    const navLinks=document.querySelector('.nav-links');
+    mobileMenu.addEventListener('click',()=>{navLinks.classList.toggle('show');});
+    const observer=new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('show');}});
+    },{threshold:0.12});
+    document.querySelectorAll('.reveal').forEach(el=>{observer.observe(el);});
+  </script>
+</body>
+</html>
