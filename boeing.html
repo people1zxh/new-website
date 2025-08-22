@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Boeing - AviationHub</title>
+  <meta name="description" content="Boeing: origem, evolução, modelos icónicos, frota atual e eventos marcantes."/>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;line-height:1.6;color:#333;
+      background:linear-gradient(135deg,#1e3c72 0%,#2a5298 100%);}
+    .container{width:90%;max-width:1200px;margin:0 auto;}
+    header{background:#fff;box-shadow:0 4px 20px rgba(0,0,0,0.1);position:sticky;top:0;z-index:1000;}
+    nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 0;}
+    .logo{font-size:2rem;font-weight:bold;color:#1e3c72;text-decoration:none;}
+    .nav-links{list-style:none;display:flex;gap:1.2rem;align-items:center;}
+    .nav-links a{text-decoration:none;color:#333;font-weight:500;transition:color .3s;position:relative;}
+    .nav-links a:hover{color:#1e3c72;}
+    .nav-links a::after{content:'';position:absolute;width:0;height:2px;bottom:-5px;left:0;background-color:#1e3c72;transition:width .3s;}
+    .nav-links a:hover::after{width:100%;}
+    .nav-links a.active{color:#1e3c72;font-weight:600;}
+    .mobile-menu{display:none;flex-direction:column;gap:5px;cursor:pointer;}
+    .mobile-menu span{width:26px;height:3px;background:#333;border-radius:3px;}
+    @media(max-width:768px){
+      .nav-links{display:none;flex-direction:column;background:rgba(255,255,255,.95);
+        position:absolute;top:60px;right:20px;padding:1rem 2rem;border-radius:10px;box-shadow:0 5px 15px rgba(0,0,0,0.1);}
+      .nav-links.show{display:flex;}
+      .mobile-menu{display:flex;}
+    }
+    .breadcrumb{background:rgba(255,255,255,0.1);padding:.5rem 0;color:#fff;}
+    .breadcrumb a{color:rgba(255,255,255,0.8);text-decoration:none;}
+    .breadcrumb a:hover{color:#fff;}
+    .page-hero{text-align:center;padding:3rem 0;color:#fff;}
+    .page-hero h1{font-size:3rem;margin-bottom:1rem;text-shadow:2px 2px 4px rgba(0,0,0,0.3);}
+    .main-content{background:#fff;margin:2rem 0;border-radius:20px 20px 0 0;
+      box-shadow:0 -10px 40px rgba(0,0,0,0.1);}
+    .content-main{padding:3rem;}
+    p,li,td,th{text-align:justify;}
+    .section{margin-bottom:2.5rem;}
+    .section h2{color:#1e3c72;margin-bottom:.75rem;}
+    figure{margin:1.5rem auto;border-radius:14px;overflow:hidden;box-shadow:0 8px 18px rgba(0,0,0,0.06);
+      max-width:700px;}
+    figure img{width:100%;height:auto;display:block;object-fit:cover;}
+    figure figcaption{text-align:center;font-size:.9rem;color:#555;padding:.5rem;background:#f8f9fa;}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;}
+    .card{background:#f8f9fa;border:1px solid #e8edf5;border-radius:14px;padding:1rem;box-shadow:0 4px 12px rgba(0,0,0,0.05);}
+    .facts{display:grid;gap:.75rem;margin-top:.5rem;}
+    .fact{background:#fff;border-left:4px solid #1e3c72;padding:.75rem 1rem;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.04);}
+    .table-wrapper{overflow-x:auto;margin-top:.75rem;}
+    .table{width:100%;border-collapse:collapse;border:1px solid #e8edf5;border-radius:12px;overflow:hidden;min-width:400px;}
+    .table th,.table td{padding:.8rem 1rem;border-bottom:1px solid #eef2f8;}
+    .table thead th{background:#f5f7fb;color:#2a3a5b;text-align:justify;}
+    .reveal{opacity:0;transform:translateY(26px);transition:opacity .6s,transform .6s;}
+    .reveal.show{opacity:1;transform:translateY(0);}
+    .footer{background:#111;color:#fff;padding:2rem 0;text-align:center;}
+    .footer a{color:#fff;text-decoration:underline;}
+    @media(max-width:480px){
+      .container{padding-left:12px;padding-right:12px;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a href="index.html" class="logo">✈️ AviationHub</a>
+        <ul class="nav-links">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="historia.html">História</a></li>
+          <li><a href="aeronaves.html" class="active">Aeronaves</a></li>
+          <li><a href="militar.html">Militar</a></li>
+          <li><a href="economia.html">Economia</a></li>
+          <li><a href="formacao.html">Formação</a></li>
+          <li><a href="jornada.html">Minha Jornada</a></li>
+        </ul>
+        <div class="mobile-menu"><span></span><span></span><span></span></div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="breadcrumb">
+    <div class="container">
+      <small><a href="index.html">Início</a> › <a href="aeronaves.html">Aeronaves</a> › <strong>Boeing</strong></small>
+    </div>
+  </div>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1>Boeing</h1>
+      <p>História, modelos e impacto na aviação mundial</p>
+    </div>
+  </section>
+
+  <div class="main-content">
+    <div class="container">
+      <div class="content-main">
+
+        <section class="section reveal">
+          <h2>Origem & Evolução</h2>
+          <p>
+            A Boeing foi fundada em 1916 por William E. Boeing em Seattle. Inicialmente focada em hidroaviões,
+            rapidamente evoluiu para se tornar um dos maiores fabricantes de aeronaves comerciais e militares do mundo.
+          </p>
+          <figure>
+            <img src="boeing-origem.jpg" alt="William Boeing e hangar original">
+            <figcaption>William Boeing e o hangar original em Seattle.</figcaption>
+          </figure>
+        </section>
+
+        <section class="section reveal">
+          <h2>Aviões históricos</h2>
+          <div class="cards">
+            <div class="card">
+              <h3>Boeing 707</h3>
+              <p class="muted">Primeiro jato comercial de sucesso da Boeing, lançado em 1958, que abriu a era do transporte aéreo em massa.</p>
+            </div>
+            <div class="card">
+              <h3>Boeing 737</h3>
+              <p class="muted">O avião comercial mais vendido de todos os tempos, lançado em 1967, e ainda em produção em versões modernizadas.</p>
+            </div>
+            <div class="card">
+              <h3>Boeing 747</h3>
+              <p class="muted">Conhecido como “Jumbo Jet”, lançado em 1969, revolucionou o transporte aéreo de longo curso.</p>
+            </div>
+          </div>
+          <figure>
+            <img src="boeing-historicos.jpg" alt="Boeing 747">
+            <figcaption>Boeing 747 em voo inaugural.</figcaption>
+          </figure>
+        </section>
+
+        <section class="section reveal">
+          <h2>Modelos mais usados hoje</h2>
+          <p class="muted">Resumo dos principais Boeing em operação global.</p>
+          <div class="table-wrapper">
+            <table class="table">
+              <thead>
+                <tr><th>Modelo</th><th>Segmento</th><th>Destaques</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>737 MAX</td><td>Curto/Médio</td><td>Versão modernizada do 737, com motores mais eficientes e melhorias aerodinâmicas.</td></tr>
+                <tr><td>777</td><td>Longo curso</td><td>Grande alcance e capacidade, um dos mais usados para voos intercontinentais.</td></tr>
+                <tr><td>787 Dreamliner</td><td>Longo curso</td><td>Uso extensivo de materiais compósitos, alta eficiência de combustível e conforto para passageiros.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <figure>
+            <img src="boeing-modern.jpg" alt="Boeing 787 Dreamliner">
+            <figcaption>Boeing 787 Dreamliner em aproximação para aterragem.</figcaption>
+          </figure>
+        </section>
+
+        <section class="section reveal">
+          <h2>Eventos trágicos relevantes</h2>
+          <div class="facts">
+            <div class="fact"><strong>737 MAX (2018-2019)</strong> — Dois acidentes fatais (Lion Air 610 e Ethiopian Airlines 302) resultaram na imobilização global do modelo e em mudanças profundas nos sistemas de controlo e certificação.</div>
+            <div class="fact"><strong>TWA 800 (1996)</strong> — Explosão no ar de um 747 ao largo de Nova Iorque levou a investigações e mudanças em sistemas de combustível.</div>
+          </div>
+          <figure>
+            <img src="boeing-tragedias.jpg" alt="Boeing 737 MAX estacionado">
+            <figcaption>Boeing 737 MAX estacionado em solo.</figcaption>
+          </figure>
+        </section>
+
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 AviationHub. Feito com paixão pela aviação ✈️</p>
+      <p><a href="index.html">Voltar ao Início</a></p>
+    </div>
+  </footer>
+
+  <script>
+    const mobileMenu=document.querySelector('.mobile-menu');
+    const navLinks=document.querySelector('.nav-links');
+    mobileMenu.addEventListener('click',()=>{navLinks.classList.toggle('show');});
+    const observer=new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('show');}});
+    },{threshold:0.12});
+    document.querySelectorAll('.reveal').forEach(el=>{observer.observe(el);});
+  </script>
+</body>
+</html>
